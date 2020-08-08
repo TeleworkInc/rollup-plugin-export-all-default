@@ -60,3 +60,16 @@ export { namedExport1, namedExport2, namedExport3 };
 // added by this plugin:
 export default { namedExport1, namedExport2, namedExport3 };
 ```
+
+It is effectively the same as doing:
+```javascript
+export const namedExport1 = ...;
+export const namedExport2 = ...;
+export const namedExport3 = ...;
+
+export default {
+  namedExport1,
+  namedExport2,
+  namedExport3
+};
+```
