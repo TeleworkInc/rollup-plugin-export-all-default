@@ -1,5 +1,5 @@
 {
-  "name": "rollup-plugin-export-all-default",
+  "name": "rollup-plugin-export-default",
   "version": "1.2.0",
   "repository": "https://github.com/TeleworkInc/rollup-plugin-export-all-default.git",
   "author": "Christian Lewis <hello@trytelework.com>",
