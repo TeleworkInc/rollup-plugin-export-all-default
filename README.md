@@ -58,4 +58,5 @@ generated `export { ... }` statement, i.e.:
 export { namedExport1, namedExport2, namedExport3 };
 
 // added by this plugin:
+export default { namedExport1, namedExport2, namedExport3 };
 ```
