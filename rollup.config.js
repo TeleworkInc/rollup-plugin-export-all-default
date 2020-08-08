@@ -7,7 +7,7 @@
 
 const exportAllDefault = require('.');
 const filesToBundle = [
-  './lib/testExports.mjs',
+  './lib/testNamedExports.mjs',
   './lib/testManualDefault.mjs',
 ];
 
