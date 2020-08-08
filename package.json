@@ -1,0 +1,15 @@
+{
+  "name": "rollup-plugin-export-all-default",
+  "version": "1.0.0",
+  "repository": "https://github.com/TeleworkInc/rollup-plugin-export-all-default.git",
+  "author": "Christian Lewis <hello@trytelework.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn rollup -c",
+    "test": "yarn ava"
+  },
+  "dependencies": {
+    "ava": "^3.11.1",
+    "rollup": "^2.23.1"
+  }
+}
