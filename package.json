@@ -5,11 +5,12 @@
   "author": "Christian Lewis <hello@trytelework.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn rollup -c",
+    "build": "yarn rollup -c && yarn test",
     "test": "yarn ava"
   },
   "dependencies": {
     "ava": "^3.11.1",
+    "glob": "^7.1.6",
     "rollup": "^2.23.1"
   }
 }

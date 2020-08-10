@@ -5,11 +5,10 @@
  * Test Rollup config which will generate an example output in build/.
  */
 
+const glob = require('glob');
+
 const exportAllDefault = require('.');
-const filesToBundle = [
-  './lib/testNamedExports.mjs',
-  './lib/testManualDefault.mjs',
-];
+const filesToBundle = glob.sync('./lib/**.mjs');
 
 module.exports = filesToBundle.map(
     (file) => ({

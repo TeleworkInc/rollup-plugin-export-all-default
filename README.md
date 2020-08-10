@@ -4,9 +4,9 @@ This is a Rollup plugin which will export all named exports as `default` if no
 rather than `import * as pkg from 'pkg'`, while still allowing named imports
 like `import { myNamedExport } from 'pkg'`.
 
-Consider:
 
-`lib/testNamedExports.mjs`
+## Example
+Consider the following source, which provides 3 named exports:
 ```javascript
 const namedExport1 = 42;
 const namedExport2 = 1.6180339887498948482;
@@ -22,32 +22,35 @@ export {
 };
 ```
 
-`test/testNamedExports.js`
-```javascript
-import testDefault from '../build/testNamedExports.mjs';
-console.log(testDefault);
+Build with Rollup, and you can see that in the absence of a manually specified
+`default` export, all named exports are provided as `default`:
 
-// prints
+```javascript
+import testDefaultExport from '../build/testDefaultExport.mjs';
+import {
+  inlineNamedExport,
+  namedExport1,
+  namedExport2,
+} from '../build/testDefaultExport.mjs';
+
+console.log(testDefaultExport);
+console.log({
+  inlineNamedExport,
+  namedExport1,
+  namedExport2,
+});
+
+// output: default = all named
 {
   inlineNamedExport: { foo: 'bar', fizz: 'buzz' },
   namedExport1: 42,
   namedExport2: 1.618033988749895
 }
-```
-
-`lib/testManualDefault.mjs`
-```javascript
-export const Test = 'Hello world';
-export default 42;
-```
-
-`test/testManualDefault.mjs`
-```javascript
-import testManualDefault from '../build/testManualDefault.mjs';
-console.log(testManualDefault);
-
-// prints
-42
+{
+  inlineNamedExport: { foo: 'bar', fizz: 'buzz' },
+  namedExport1: 42,
+  namedExport2: 1.618033988749895
+}
 ```
 
 This is done by adding an `export default { ... }` statement following the
