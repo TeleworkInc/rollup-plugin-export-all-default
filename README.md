@@ -39,8 +39,11 @@ console.log({
   namedExport1,
   namedExport2,
 });
+```
 
-// output: default = all named
+Logs to the console:
+
+```javascript
 {
   inlineNamedExport: { foo: 'bar', fizz: 'buzz' },
   namedExport1: 42,
